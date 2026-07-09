@@ -1,0 +1,150 @@
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
+import { FaGithub, FaLinkedin, FaArrowDown } from "react-icons/fa";
+
+import Button from "../UI/Button";
+
+const TYPE_SEQUENCE = [
+  "Frontend Developer",
+  2000,
+  "React Developer",
+  2000,
+  "UI Designer",
+  2000,
+  "Tailwind CSS Expert",
+  2000,
+];
+
+const STATS = [
+  { number: "15+", label: "Projects" },
+  { number: "1+", label: "Years Experience" },
+  { number: "100%", label: "Client Satisfaction" },
+];
+
+function Hero() {
+  return (
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
+      {/* Background */}
+      <div className="absolute inset-0 -z-20 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10" />
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-blue-500/20 blur-[120px]" />
+      <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-purple-500/20 blur-[120px]" />
+
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
+        {/* Left side */}
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="inline-block px-5 py-2 rounded-full bg-[rgb(var(--primary))]/10 text-[rgb(var(--primary))] font-semibold mb-6">
+            👋 Welcome to my portfolio
+          </span>
+
+          <h1 className="text-5xl lg:text-7xl font-black leading-tight">
+            Hi, I&apos;m
+            <span className="text-[rgb(var(--primary))]"> Fatima Akbar</span>
+          </h1>
+
+          <div className="text-2xl mt-8 h-16 font-semibold">
+            <TypeAnimation
+              sequence={TYPE_SEQUENCE}
+              speed={40}
+              repeat={Infinity}
+            />
+          </div>
+
+          <p className="mt-8 text-lg text-gray-500 max-w-xl leading-8">
+            Passionate frontend developer focused on building modern,
+            responsive, accessible, and high-performance web applications
+            using React, Tailwind CSS, and JavaScript.
+          </p>
+
+          <div className="flex flex-wrap gap-5 mt-10">
+            <a href="#projects">
+              <Button>
+                View Projects
+              </Button>
+            </a>
+            <Button>
+              Download CV
+            </Button>
+          </div>
+
+          <div className="flex gap-6 mt-10 text-3xl">
+            <a
+              href="https://github.com/fatimaakbar004-sudo"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="hover:text-[rgb(var(--primary))] transition"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="www.linkedin.com/in/fatima-akbar-45b7b33a6"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="hover:text-[rgb(var(--primary))] transition"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Right side */}
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center"
+        >
+          <div className="relative">
+            <div className="absolute inset-0 rounded-full bg-[rgb(var(--primary))]/30 blur-3xl" />
+            <img
+              src="/projects/profile.svg"
+              alt="Fatima Akbar"
+              loading="lazy"
+              className="relative w-80 lg:w-[430px] rounded-full border-8 border-white shadow-2xl object-cover"
+            />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Stats */}
+      <div className="absolute bottom-24 left-1/2 -translate-x-1/2">
+        <div className="grid grid-cols-3 gap-8 bg-white dark:bg-zinc-900 shadow-2xl rounded-3xl px-10 py-7">
+          {STATS.map((stat) => (
+            <Stat key={stat.label} number={stat.number} label={stat.label} />
+          ))}
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <a
+        href="#about"
+        aria-label="Scroll to About section"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce"
+      >
+        <FaArrowDown size={26} />
+      </a>
+    </section>
+  );
+}
+
+function Stat({ number, label }) {
+  return (
+    <div className="text-center">
+      <h3 className="text-3xl font-bold text-[rgb(var(--primary))]">
+        {number}
+      </h3>
+      <p className="text-gray-500 mt-2">{label}</p>
+    </div>
+  );
+}
+
+export default Hero;
