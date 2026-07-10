@@ -15,12 +15,6 @@ const TYPE_SEQUENCE = [
   2000,
 ];
 
-const STATS = [
-  { number: "15+", label: "Projects" },
-  { number: "1+", label: "Years Experience" },
-  { number: "100%", label: "Client Satisfaction" },
-];
-
 const SOCIAL_LINKS = [
   {
     icon: FaGithub,
@@ -122,15 +116,6 @@ function Hero() {
         </motion.div>
       </div>
 
-      {/* Stats */}
-      <div className="absolute bottom-24 left-1/2 -translate-x-1/2">
-        <div className="grid grid-cols-3 gap-8 bg-white dark:bg-zinc-900 shadow-2xl rounded-3xl px-10 py-7">
-          {STATS.map((stat) => (
-            <Stat key={stat.label} number={stat.number} label={stat.label} />
-          ))}
-        </div>
-      </div>
-
       {/* Scroll indicator */}
       <a
         href="#about"
@@ -140,17 +125,6 @@ function Hero() {
         <FaArrowDown size={26} />
       </a>
     </section>
-  );
-}
-
-function Stat({ number, label }) {
-  return (
-    <div className="text-center">
-      <h3 className="text-3xl font-bold text-[rgb(var(--primary))]">
-        {number}
-      </h3>
-      <p className="text-gray-500 mt-2">{label}</p>
-    </div>
   );
 }
 
