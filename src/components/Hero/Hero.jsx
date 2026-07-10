@@ -21,6 +21,19 @@ const STATS = [
   { number: "100%", label: "Client Satisfaction" },
 ];
 
+const SOCIAL_LINKS = [
+  {
+    icon: FaGithub,
+    href: "https://github.com/fatimaakbar004-sudo",
+    label: "GitHub",
+  },
+  {
+    icon: FaLinkedin,
+    href: "https://www.linkedin.com/in/fatima-akbar-45b7b33a6",
+    label: "LinkedIn",
+  },
+];
+
 function Hero() {
   return (
     <section
@@ -40,7 +53,7 @@ function Hero() {
           transition={{ duration: 0.8 }}
         >
           <span className="inline-block px-5 py-2 rounded-full bg-[rgb(var(--primary))]/10 text-[rgb(var(--primary))] font-semibold mb-6">
-            👋 Welcome to my portfolio
+            <span aria-hidden="true">👋</span> Welcome to my portfolio
           </span>
 
           <h1 className="text-5xl lg:text-7xl font-black leading-tight">
@@ -63,36 +76,30 @@ function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-5 mt-10">
-            <a href="#projects">
-              <Button>
-                View Projects
-              </Button>
-            </a>
-            <Button>
+            <Button href="#projects">View Projects</Button>
+
+            <Button
+              href="/Fatima-Akbar-CV.pdf"
+              download
+              outline
+            >
               Download CV
             </Button>
           </div>
 
           <div className="flex gap-6 mt-10 text-3xl">
-            <a
-              href="https://github.com/fatimaakbar004-sudo"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              className="hover:text-[rgb(var(--primary))] transition"
-            >
-              <FaGithub />
-            </a>
-
-            <a
-              href="www.linkedin.com/in/fatima-akbar-45b7b33a6"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="hover:text-[rgb(var(--primary))] transition"
-            >
-              <FaLinkedin />
-            </a>
+            {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                className="hover:text-[rgb(var(--primary))] transition"
+              >
+                <Icon />
+              </a>
+            ))}
           </div>
         </motion.div>
 
