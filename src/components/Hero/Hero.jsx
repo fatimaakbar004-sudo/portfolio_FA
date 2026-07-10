@@ -70,7 +70,9 @@ function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-5 mt-10">
-            <Button href="#projects">View Projects</Button>
+             <Button>
+              <a href="#projects">View Projects</a>
+            </Button>
 
             <Button
               href="/Fatima-Akbar-CV.pdf"
