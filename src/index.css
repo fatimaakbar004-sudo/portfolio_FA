@@ -9,7 +9,7 @@
 =========================== */
 
 :root {
-  --primary: 65 105 225;
+  --primary: 234 179 8;
 
   --blue: 65 105 225;
   --red: 220 38 38;
@@ -18,25 +18,25 @@
   --orange: 249 115 22;
   --gold: 234 179 8;
 
-  --background: 248 250 252;
-  --surface: 255 255 255;
-  --card: 255 255 255;
+  --background: 8 8 8;
+  --surface: 17 17 17;
+  --card: 24 24 24;
 
-  --text: 15 23 42;
-  --muted: 100 116 139;
+  --text: 245 245 245;
+  --muted: 163 163 163;
 
-  --border: 226 232 240;
+  --border: 51 51 51;
 }
 
 .dark {
-  --background: 9 9 11;
-  --surface: 24 24 27;
-  --card: 39 39 42;
+  --background: 0 0 0;
+  --surface: 12 12 12;
+  --card: 20 20 20;
 
-  --text: 244 244 245;
-  --muted: 161 161 170;
+  --text: 250 250 250;
+  --muted: 170 170 170;
 
-  --border: 63 63 70;
+  --border: 45 45 45;
 }
 
 /* ===========================
@@ -124,7 +124,7 @@ section {
 
 ::selection {
   background: rgb(var(--primary));
-  color: white;
+  color: black;
 }
 
 /* ===========================
@@ -154,13 +154,13 @@ section {
 
 .glass {
   backdrop-filter: blur(18px);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(234, 179, 8, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .dark .glass {
-  background: rgba(24, 24, 27, 0.6);
+  background: rgba(20, 20, 20, 0.6);
 }
 
 /* ===========================
@@ -170,6 +170,7 @@ section {
 .gradient-text {
   background-clip: text;
   color: transparent;
+  background-image: linear-gradient(135deg, rgb(250 204 21), rgb(161 98 7));
 }
 
 /* ===========================
@@ -186,11 +187,11 @@ section {
 }
 
 .shadow-card {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .dark .shadow-card {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
 }
 
 /* ===========================
@@ -204,7 +205,7 @@ section {
   padding: 15px 34px;
   border-radius: 14px;
   background: rgb(var(--primary));
-  color: white;
+  color: black;
   font-weight: 600;
   transition: background-color 0.35s, color 0.35s, transform 0.35s, box-shadow 0.35s;
 }
@@ -226,7 +227,7 @@ section {
 
 .btn-outline:hover {
   background: rgb(var(--primary));
-  color: white;
+  color: black;
 }
 
 /* ===========================
@@ -243,7 +244,7 @@ section {
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* ===========================
@@ -380,7 +381,7 @@ section {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.45));
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
   z-index: -1;
 }
 
@@ -411,7 +412,7 @@ section {
 
 .hero-image img {
   border-radius: 35px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
 }
 
 .hero-image::before {
@@ -420,7 +421,7 @@ section {
   width: 260px;
   height: 260px;
   background: rgb(var(--primary));
-  opacity: 0.15;
+  opacity: 0.2;
   border-radius: 50%;
   top: -50px;
   right: -60px;
@@ -432,8 +433,8 @@ section {
   position: absolute;
   width: 180px;
   height: 180px;
-  background: #9333ea;
-  opacity: 0.12;
+  background: #a16207;
+  opacity: 0.18;
   border-radius: 50%;
   bottom: -40px;
   left: -40px;
@@ -454,7 +455,7 @@ section {
 
 .about-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
 }
 
 .about-image {
@@ -509,7 +510,7 @@ section {
   width: 65px;
   height: 65px;
   border-radius: 18px;
-  background: rgb(var(--primary) / 0.08);
+  background: rgb(var(--primary) / 0.12);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -562,7 +563,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgb(var(--primary) / 0.08), transparent);
+  background: linear-gradient(135deg, rgb(var(--primary) / 0.1), transparent);
   opacity: 0;
   transition: 0.4s;
 }
@@ -575,7 +576,7 @@ section {
   width: 70px;
   height: 70px;
   border-radius: 20px;
-  background: rgb(var(--primary) / 0.1);
+  background: rgb(var(--primary) / 0.14);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -620,7 +621,7 @@ section {
   border-radius: 50%;
   background: rgb(var(--primary));
   border: 5px solid rgb(var(--background));
-  box-shadow: 0 0 0 6px rgb(var(--primary) / 0.15);
+  box-shadow: 0 0 0 6px rgb(var(--primary) / 0.18);
 }
 
 .timeline-card {
@@ -650,7 +651,7 @@ section {
 }
 
 .tech-stack span {
-  background: rgb(var(--primary) / 0.1);
+  background: rgb(var(--primary) / 0.14);
   color: rgb(var(--primary));
   padding: 8px 16px;
   border-radius: 30px;
@@ -706,7 +707,7 @@ section {
 
 .project-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
 }
 
 .project-image {
@@ -728,7 +729,7 @@ section {
 .project-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.78);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -747,7 +748,7 @@ section {
   height: 56px;
   border-radius: 50%;
   border: none;
-  background: white;
+  background: rgb(var(--primary));
   color: black;
   display: flex;
   justify-content: center;
@@ -758,8 +759,8 @@ section {
 .project-overlay button:hover,
 .project-overlay a:hover {
   transform: scale(1.15);
-  background: rgb(var(--primary));
-  color: white;
+  background: white;
+  color: black;
 }
 
 .project-content {
@@ -774,7 +775,7 @@ section {
 }
 
 .project-tags span {
-  background: rgb(var(--primary) / 0.1);
+  background: rgb(var(--primary) / 0.14);
   color: rgb(var(--primary));
   padding: 8px 16px;
   border-radius: 30px;
@@ -804,7 +805,7 @@ section {
 
 .filter-buttons button.active {
   background: rgb(var(--primary));
-  color: white;
+  color: black;
 }
 
 .filter-buttons button:hover {
@@ -818,7 +819,7 @@ section {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px);
   z-index: 999;
 }
@@ -888,7 +889,7 @@ section {
   height: 80px;
   margin: auto;
   border-radius: 50%;
-  background: rgb(var(--primary) / 0.1);
+  background: rgb(var(--primary) / 0.14);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1070,7 +1071,7 @@ section {
 .contact-card:hover {
   transform: translateY(-6px);
   border-color: rgb(var(--primary));
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .contact-form {
@@ -1101,7 +1102,7 @@ section {
 .contact-form textarea:focus {
   outline: none;
   border-color: rgb(var(--primary));
-  box-shadow: 0 0 0 3px rgb(var(--primary) / 0.15);
+  box-shadow: 0 0 0 3px rgb(var(--primary) / 0.18);
 }
 
 /* =====================================================
@@ -1151,7 +1152,7 @@ section {
 
 .footer-socials a:hover {
   background: rgb(var(--primary));
-  color: #fff;
+  color: #000;
   transform: translateY(-5px);
 }
 
@@ -1196,11 +1197,11 @@ section {
   height: 52px;
   border-radius: 50%;
   background: rgb(var(--primary));
-  color: #fff;
+  color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
   z-index: 999;
 }
